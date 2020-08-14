@@ -1,3 +1,13 @@
-%title= "Organizer Application"
-%h1= "Help"
-%p= "Find me in a place"
+<% provide(:title, "Help") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %>| Organizer Application</title>
+  </head>
+  <body>
+    <h1>Organizing Boss</h1>
+    <p>
+      This is where everything is going to go.
+    </p>
+  </body>
+</html>
