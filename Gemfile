@@ -25,6 +25,7 @@ gem 'rubocop', '~> 0.89.1'
 gem 'rspec', '~> 3.9'
 gem 'haml', '~> 5.1.2'
 gem 'bootstrap', '~> 4.5.2'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
