@@ -10,4 +10,12 @@ module ApplicationHelper
     end
   end
 
+  def flash_class(level)
+    level = {
+        notice: "alert alert-info",
+        success: "alert alert-success",
+        error: "alert alert-error",
+        alert: "alert alert-error"
+      }
+  end
 end
