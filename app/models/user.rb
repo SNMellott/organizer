@@ -36,6 +36,6 @@ class User < ApplicationRecord
   end
 
   def feed
-    Task.where("user_id = ?", id)
+    Task.where(user_id: id)
   end
 end

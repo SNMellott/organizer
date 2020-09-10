@@ -28,6 +28,8 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bcrypt', '~> 3.1.15'
 gem 'image_processing', '~> 1.9.3'
 gem 'mini_magick', '~> 4.9.5'
+gem 'will_paginate', '~> 3.3.0'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

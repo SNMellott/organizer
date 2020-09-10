@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @tasks = @user.tasks
+    @tasks = @user.tasks.paginate(page: params[:page])
   end
 
   def create
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   def destroy
