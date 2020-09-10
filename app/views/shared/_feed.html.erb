@@ -1,5 +1,8 @@
 <% if @feed_items.any? %>
   <ol class="tasks">
-    <%= render @feed_items %>
+    <% @feed_items.each do |task| %>
+      <%= render partial: 'tasks/task', locals: {task: task} %>
+    <% end %>
   </ol>
+  <%= will_paginate @feed_items %>
 <% end %>

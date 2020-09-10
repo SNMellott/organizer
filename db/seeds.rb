@@ -7,6 +7,9 @@ User.create!(name: "Will Westin",
              email: "will@test.com",
              password: "foobar",
              password_confirmation: "foobar")
-Task.create!(user_id: "1",
-             title: "Test Task",
-             information: "This is general test information")
+users = User.order(:created_at).take(2)
+50.times do
+  information = "This is a test post"
+  title = "Title Test"
+  users.each { |user| user.tasks.create!(information: information, title: title) }
+end

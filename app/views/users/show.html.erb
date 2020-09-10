@@ -11,7 +11,10 @@
     <% if @user.tasks.any? %>
       <h3>Tasks (<%= @user.tasks.count %>)</h3>
       <ol class="tasks">
-        <%= render @tasks %>
+        <% @tasks.each do |task| %>
+          <p><%= task.title %></p>
+          <p><%= task.information %></p>
+        <% end %>
       </ol>
       <%= will_paginate @tasks %>
     <% end %>
