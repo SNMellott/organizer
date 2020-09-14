@@ -1,7 +1,24 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Organizer Application</h1>
-    <p class="lead"> This is where information is going to go.</p>
-    <%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="task_form">
+        <%= render 'shared/task_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Task Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Organizer Application</h1>
+      <p class="lead"> This is where information is going to go.</p>
+      <%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
+    </div>
+  </div>
+<% end %>
