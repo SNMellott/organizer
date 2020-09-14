@@ -12,8 +12,7 @@
       <h3>Tasks (<%= @user.tasks.count %>)</h3>
       <ol class="tasks">
         <% @tasks.each do |task| %>
-          <p><%= task.title %></p>
-          <p><%= task.information %></p>
+          <%= render partial: 'tasks/task', locals: {task: task} %>
         <% end %>
       </ol>
       <%= will_paginate @tasks %>
