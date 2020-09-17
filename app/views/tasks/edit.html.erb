@@ -1,0 +1,11 @@
+<% provide(:title, "Edit Task Post") %>
+<h1>Update Your Task</h1>
+
+<%= form_for(@task) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :title %>
+    <%= f.text_area :information %>
+  </div>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
