@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :logged_in_user, only: [:create, :edit, :destroy]
-  before_action :correct_user, only: [:edit, :destroy]
+  before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def create
     @task = current_user.tasks.build(task_params)
@@ -20,6 +20,17 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update_attributes(task_params)
+      flash[:success] = "Your Task has been Updated."
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   private
