@@ -1,0 +1,15 @@
+<% provide(:title, 'Edit Task Type') %>
+<h1> Add a Task Type </h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(TaskType.new) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :typestitle %>
+      <%= f.text_field :typestitle, placeholder: "Type of Task" %>
+
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

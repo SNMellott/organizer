@@ -13,3 +13,6 @@ users = User.order(:created_at).take(2)
   title = "Title Test"
   users.each { |user| user.tasks.create!(information: information, title: title) }
 end
+TaskType.create!(type: "Work Task")
+TaskType.create!(type: "Personal Task")
+TaskType.create!(type: "Other")

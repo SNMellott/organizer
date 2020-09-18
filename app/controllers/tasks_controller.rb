@@ -20,6 +20,17 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update_attributes(task_params)
+      flash[:success] = "Your Task has been Updated."
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   private
