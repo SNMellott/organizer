@@ -13,19 +13,19 @@
 ActiveRecord::Schema.define(version: 2020_09_17_152321) do
 
   create_table "task_types", force: :cascade do |t|
-    t.string "type"
-    t.integer "task_id", null: false
+    t.string "typestitle"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["task_id"], name: "index_task_types_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
     t.text "information"
     t.integer "user_id", null: false
     t.string "title"
+    t.integer "task_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_type_id"], name: "index_tasks_on_task_type_id"
     t.index ["user_id", "created_at"], name: "index_tasks_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
@@ -41,6 +41,6 @@ ActiveRecord::Schema.define(version: 2020_09_17_152321) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "task_types", "tasks"
+  add_foreign_key "tasks", "task_types"
   add_foreign_key "tasks", "users"
 end

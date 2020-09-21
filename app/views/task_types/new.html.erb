@@ -6,7 +6,7 @@
     <%= form_for(TaskType.new) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :typestitle %>
+      <%= f.label :title %>
       <%= f.text_field :typestitle, placeholder: "Type of Task" %>
 
       <%= f.submit "Save", class: "btn btn-primary" %>

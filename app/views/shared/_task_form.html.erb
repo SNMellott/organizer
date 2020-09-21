@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_field :title, placeholder: "Title of Task" %>
-    <%= f.collection_select(:task_type, TaskType.all, :id, :typestitle) %>
+    <%= f.collection_select(:task_type_id, TaskType.all, :id, :typestitle) %>
     <%= f.text_area :information, placeholder: "Compose new Task..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>

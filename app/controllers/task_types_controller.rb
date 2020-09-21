@@ -4,7 +4,7 @@ class TaskTypesController < ApplicationController
   def new
     @task_type = TaskType.new
   end
-  
+
   def create
     @task_type = TaskType.new(task_type_params)
     if @task_type.save
@@ -18,7 +18,7 @@ class TaskTypesController < ApplicationController
   private
 
   def task_type_params
-    params.require(:task_type).permit(:typestitle, :task_id)
+    params.require(:task_type).permit(:typestitle)
   end
 
 end

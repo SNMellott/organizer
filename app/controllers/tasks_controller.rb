@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :information)
+    params.require(:task).permit(:title, :information, :task_type_id)
   end
 
   def correct_user
